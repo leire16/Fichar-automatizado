@@ -7,6 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 import sys
 import os
+import time
 sys.stdout.reconfigure(encoding='utf-8')
 
 # Obtener credenciales desde variables de entorno
@@ -73,8 +74,8 @@ try:
 except Exception as e:
     print(f"❌ No se pudo encontrar el botón de fichaje: {e}")
     
-#time.sleep(3)
-#driver.quit()  # Cierra Edge después de fichar
+time.sleep(3)
+driver.quit()  # Cierra Edge después de fichar
 
 
 	  
