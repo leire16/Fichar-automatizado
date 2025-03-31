@@ -1,0 +1,32 @@
+name: Ejecutar Fichaje
+
+on:
+  schedule:
+    - cron: '15 13 * * 1-5'  # Esto ejecutará el script de lunes a viernes a las 13:15 UTC
+
+jobs:
+  run_fichaje:
+    runs-on: ubuntu-latest  # Usamos un contenedor Ubuntu para ejecutar el script
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+        
+      - name: Configurar Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+        
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install selenium
+        
+      - name: Descargar el driver de Edge
+        run: |
+          curl -L https://msedgedriver.azureedge.net/112.0.1722.64/edgedriver_win64.zip -o edgedriver.zip
+          unzip edgedriver.zip
+          mv msedgedriver.exe /usr/local/bin/msedgedriver
+
+      - name: Ejecutar script de fichaje
+        run: |
+          python fichar.py
