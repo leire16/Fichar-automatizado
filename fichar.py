@@ -5,6 +5,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+
 
 # Ruta al archivo msedgedriver.exe descargado
 service = Service(EdgeChromiumDriverManager().install())
