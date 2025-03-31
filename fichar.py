@@ -6,10 +6,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import os
 
-# Obtener usuario y contraseña desde las variables de entorno
-username = os.getenv('USERNAME')
-password = os.getenv('PASSWORD')
-
 # Ruta al archivo msedgedriver.exe descargado
 service = Service(executable_path="C:\\Users\\lfernandez\\Videos\\edgedriver_win64\\msedgedriver.exe")
 options = Options()
@@ -39,8 +35,8 @@ try:
     password_field = driver.find_element(By.ID, "password")  # Usamos el ID del campo de contraseña
 
      # Ingresa tus credenciales usando las variables de entorno
-    username_field.send_keys(username)  # Usuario
-    password_field.send_keys(password)  # Contraseña
+    username_field.send_keys("lfernandez@teknei.com")  # Usuario
+    password_field.send_keys("Bilbao202501")  # Contraseña
 
     # Hacemos clic en el botón de inicio de sesión usando la clase del botón
     login_button = driver.find_element(By.CSS_SELECTOR, "button.btn.btn-primary")  # Usamos el selector CSS de la clase
@@ -70,3 +66,6 @@ except Exception as e:
     
 #time.sleep(3)
 #driver.quit()  # Cierra Edge después de fichar
+
+
+	  
