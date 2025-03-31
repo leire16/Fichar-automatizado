@@ -24,4 +24,7 @@ jobs:
               pip install selenium webdriver-manager
 
       - name: Run fichar.py
+        env:
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
         run: python fichar.py

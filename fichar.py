@@ -6,30 +6,36 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 import sys
+import os
 sys.stdout.reconfigure(encoding='utf-8')
 
+# Obtener credenciales desde variables de entorno
+USERNAME = os.getenv("USERNAME")
+PASSWORD = os.getenv("PASSWORD")
 
-# Ruta al archivo msedgedriver.exe descargado
+print("USERNAME:", USERNAME)
+print("PASSWORD:", PASSWORD)
+
+if not USERNAME or not PASSWORD:
+    print("❌ ERROR: Las credenciales no están configuradas correctamente.")
+    sys.exit(1)
+
+# Configurar WebDriver para Edge
 service = Service(EdgeChromiumDriverManager().install())
 options = Options()
+options.add_argument("--headless") #modo sin abrir el navegador
 
-# Agregar opción para ejecutar en modo headless (no se habre el navegador)
-options.add_argument("--headless")
-
-# Iniciar Edge en modo headless
+# Iniciar el navegador
 driver = webdriver.Edge(service=service, options=options)
 
-# URL de la página de inicio de sesión
+# URL de inicio de sesión
 login_url = "https://erp.teknei.es/web#cids=1%2C72%2C77%2C78%2C79&menu_id=327&action=460"
-
-# Navegar hasta la página de inicio de sesión
 driver.get(login_url)
 
-# Esperar hasta que los campos de usuario y contraseña estén disponibles
 try:
-    # Esperamos que el campo de usuario esté presente
+    # Esperar que los campos de usuario y contraseña estén presentes
     WebDriverWait(driver, 30).until(
-        EC.presence_of_element_located((By.ID, "login"))  # Usamos el ID del campo de usuario
+        EC.presence_of_element_located((By.ID, "login"))
     )
     print("✔ Página de inicio de sesión cargada con éxito")
 
@@ -38,8 +44,8 @@ try:
     password_field = driver.find_element(By.ID, "password")  # Usamos el ID del campo de contraseña
 
      # Ingresa tus credenciales usando las variables de entorno
-    username_field.send_keys("lfernandez@teknei.com")  # Usuario
-    password_field.send_keys("Bilbao202501")  # Contraseña
+    username_field.send_keys(USERNAME)  # Usuario
+    password_field.send_keys(PASSWORD)  # Contraseña
 
     # Hacemos clic en el botón de inicio de sesión usando la clase del botón
     login_button = driver.find_element(By.CSS_SELECTOR, "button.btn.btn-primary")  # Usamos el selector CSS de la clase
