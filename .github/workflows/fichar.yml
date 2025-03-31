@@ -2,7 +2,7 @@ name: Ejecutar Fichaje
 
 on:
   schedule:
-    - cron: '20 13 * * 1-5'  # Ejecutará el script de lunes a viernes a las 13:18 hora de Madrid (11:18 UTC)
+    - cron: '23 13 * * 1-5'  # Ejecutará el script de lunes a viernes a las 13:18 hora de Madrid (11:18 UTC)
 
 jobs:
   run_fichaje:
