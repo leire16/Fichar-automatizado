@@ -20,15 +20,8 @@ jobs:
         
       - name: Instalar dependencias
         run: |
-          python -m pip install --upgrade pip
-          pip install selenium
-
-      - name: Instalar Microsoft Edge y su controlador
-        run: |
-          # Descargar e instalar Microsoft Edge en el entorno Windows
-          Invoke-WebRequest -Uri https://msedgedriver.azureedge.net/112.0.1722.64/edgedriver_win64.zip -OutFile edgedriver.zip
-          Expand-Archive -Path edgedriver.zip -DestinationPath C:\edgedriver
-          $env:PATH += ";C:\edgedriver"
+              python -m pip install --upgrade pip
+              pip install selenium webdriver-manager
 
       - name: Run fichar.py
         run: python fichar.py

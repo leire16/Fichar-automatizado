@@ -4,10 +4,10 @@ from selenium.webdriver.edge.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import os
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 # Ruta al archivo msedgedriver.exe descargado
-service = Service(executable_path="C:\\Users\\lfernandez\\Videos\\edgedriver_win64\\msedgedriver.exe")
+service = Service(EdgeChromiumDriverManager().install())
 options = Options()
 
 # Agregar opción para ejecutar en modo headless (no se habre el navegador)
