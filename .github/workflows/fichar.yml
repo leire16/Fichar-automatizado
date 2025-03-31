@@ -3,7 +3,7 @@ name: Ejecutar Fichaje
 on:
   schedule:
     # Esto ejecutará el flujo de trabajo a las 13:15 hora local en España (CEST, UTC+2)
-    - cron: '30 14 * * 1-5'  # 16:30 CEST = 14:30 UTC
+    - cron: '47 14 * * 1-5'  # 16:30 CEST = 14:30 UTC
   workflow_dispatch:  # Permite ejecutar el flujo de trabajo manualmente desde GitHub UI
 
 jobs:
