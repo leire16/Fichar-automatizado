@@ -10,12 +10,43 @@ import os
 import time
 sys.stdout.reconfigure(encoding='utf-8')
 
+from datetime import datetime
+import sys
+
+# Lista de festivos en España (País Vasco) en formato YYYY-MM-DD (2025)
+FESTIVOS = {
+    "2025-01-01",  # Año Nuevo
+    "2025-01-06",  # Reyes Magos
+    "2025-04-17",  # Jueves Santo
+    "2025-04-18",  # Viernes Santo
+    "2025-04-21",  # Festivo País Vasco (21 de abril)
+    "2025-05-01",  # Día del Trabajador
+    "2025-05-30",  # Musical Askartza Martxa
+    "2025-07-25",  # Santiago Apóstol
+    "2025-07-31",  # San Ignacio de Loyola
+    "2025-08-15",  # Asunción de la Virgen
+    "2025-08-22",  # Dia Grande de Bilbao
+    "2025-10-12",  # Día de la Hispanidad
+    "2025-11-01",  # Todos los Santos
+    "2025-12-06",  # Día de la Constitución
+    "2025-12-08",  # Inmaculada Concepción
+    "2025-12-25"   # Navidad
+}
+
+# Obtener la fecha actual
+hoy = datetime.today().strftime('%Y-%m-%d')
+
+# Comprobar si hoy es festivo
+if hoy in FESTIVOS:
+    print(f"📅 Hoy ({hoy}) es festivo. No se ejecutará el fichaje.")
+    sys.exit(0)
+
+print(f"✅ Hoy ({hoy}) no es festivo. Procediendo con el fichaje...")
+
+
 # Obtener credenciales desde variables de entorno
 USERNAME = os.getenv("USERNAME")
 PASSWORD = os.getenv("PASSWORD")
-
-print("USERNAME:", USERNAME)
-print("PASSWORD:", PASSWORD)
 
 if not USERNAME or not PASSWORD:
     print("❌ ERROR: Las credenciales no están configuradas correctamente.")
