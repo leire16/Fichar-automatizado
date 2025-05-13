@@ -88,6 +88,17 @@ try:
         EC.presence_of_element_located((By.TAG_NAME, "body"))
     )
 
+    # Esperar un momento a que se cargue un posible mensaje de error
+    time.sleep(2)
+
+    # Verificar si aparece el mensaje de error de login
+    error_elements = driver.find_elements(By.XPATH, "//p[contains(@class, 'alert-danger') and contains(text(), 'Nombre de usuario o contraseña incorrectos')]")
+
+    if error_elements:
+        print("❌ ERROR: Usuario o contraseña incorrectos.")
+        driver.quit()
+        sys.exit(1)
+
     print("✔ Inicio de sesión exitoso")
 
     # Asegúrate de que el botón sea visible y esté habilitado
@@ -107,6 +118,3 @@ except Exception as e:
     
 time.sleep(3)
 driver.quit()  # Cierra Edge después de fichar
-
-
-	  
