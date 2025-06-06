@@ -13,7 +13,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 from datetime import datetime
 import sys
 
-# Lista de festivos en España (País Vasco) en formato YYYY-MM-DD (2025)
+# Lista de festivos en España (País Vasco) en formato YYYY-MM-DD (2025) mas vacaciones
 FESTIVOS = {
     "2025-01-01",  # Año Nuevo
     "2025-01-06",  # Reyes Magos
@@ -22,6 +22,8 @@ FESTIVOS = {
     "2025-04-21",  # Festivo País Vasco (21 de abril)
     "2025-05-01",  # Día del Trabajador
     "2025-05-30",  # Musical Askartza Martxa
+    "2025-06-12",  # Viaje Port Aventura
+    "2025-06-13",  # Viaje Port Aventura
     "2025-07-25",  # Santiago Apóstol
     "2025-07-31",  # San Ignacio de Loyola
     "2025-08-15",  # Asunción de la Virgen
@@ -110,7 +112,7 @@ try:
     print(f"Botón fichar encontrado con el texto: {boton_fichar.text}")
     
     # Realizar clic en el botón (descomenta si lo necesitas)
-    boton_fichar.click()
+    # boton_fichar.click()
     
     print("✔ Fichaje realizado con éxito")
 except Exception as e:
