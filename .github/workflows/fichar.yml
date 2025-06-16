@@ -1,8 +1,11 @@
+
+
 name: Ejecutar Fichaje
 
 on:
   schedule:
-    - cron: '20 5 * * 1-4'  # Lunes a jueves a las 07:30 CEST (05:30 UTC)
+#    - cron: '20 5 * * 1-4'  # Lunes a jueves a las 07:30 CEST (05:30 UTC) para cuando no es verano
+    - cron: '40 5 * * 1-4'  # Lunes a jueves a las 07:30 CEST (05:30 UTC) para VERANO
     - cron: '40 5 * * 5'    # Viernes a las 07:50 CEST (05:50 UTC)
   workflow_dispatch:  # Permite ejecución manual desde GitHub UI
 
