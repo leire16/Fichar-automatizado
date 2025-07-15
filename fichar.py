@@ -19,7 +19,7 @@ FESTIVOS = {
     "2025-01-06",  # Reyes Magos
     "2025-04-17",  # Jueves Santo
     "2025-04-18",  # Viernes Santo
-    "2025-04-21",  # Festivo País Vasco (21 de abril)
+    "2025-04-21",  # Festivo País Vasco
     "2025-05-01",  # Día del Trabajador
     "2025-05-30",  # Musical Askartza Martxa
     "2025-06-12",  # Viaje Port Aventura
@@ -27,12 +27,37 @@ FESTIVOS = {
     "2025-07-25",  # Santiago Apóstol
     "2025-07-31",  # San Ignacio de Loyola
     "2025-08-15",  # Asunción de la Virgen
-    "2025-08-22",  # Dia Grande de Bilbao
+    "2025-08-22",  # Día Grande de Bilbao
     "2025-10-12",  # Día de la Hispanidad
     "2025-11-01",  # Todos los Santos
     "2025-12-06",  # Día de la Constitución
     "2025-12-08",  # Inmaculada Concepción
-    "2025-12-25"   # Navidad
+    "2025-12-25",  # Navidad
+
+    # Vacaciones julio (solo lunes a viernes)
+    "2025-07-18",
+    "2025-07-21",
+    "2025-07-22",
+    "2025-07-23",
+
+    # Vacaciones agosto (solo lunes a viernes)
+    "2025-08-01",
+    "2025-08-04",
+    "2025-08-05",
+    "2025-08-06",
+    "2025-08-07",
+    "2025-08-08",
+    "2025-08-11",
+    "2025-08-12",
+    "2025-08-13",
+    "2025-08-14",
+    # "2025-08-15",  # Ya estaba
+    "2025-08-18",
+    "2025-08-19",
+    "2025-08-20",
+    "2025-08-21",
+    # "2025-08-22",  # Ya estaba
+    "2025-08-25"
 }
 
 # Obtener la fecha actual
