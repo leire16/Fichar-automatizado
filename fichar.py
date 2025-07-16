@@ -4,7 +4,7 @@ from selenium.webdriver.edge.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
+#from webdriver_manager.microsoft import EdgeChromiumDriverManager
 import sys
 import os
 import time
@@ -80,7 +80,10 @@ if not USERNAME or not PASSWORD:
     sys.exit(1)
 
 # Configurar WebDriver para Edge
-service = Service(EdgeChromiumDriverManager().install())
+# Como está en la misma carpeta, solo pones el nombre del archivo
+driver_path = "msedgedriver.exe"
+
+service = Service(executable_path=driver_path)
 options = Options()
 options.add_argument("--headless") #modo sin abrir el navegador
 
