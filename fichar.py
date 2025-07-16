@@ -80,7 +80,7 @@ if not USERNAME or not PASSWORD:
     sys.exit(1)
 
 # Configurar WebDriver para Edge
-service = Service(EdgeChromiumDriverManager(version="138.0.3351.83").install())
+service = Service(EdgeChromiumDriverManager().install())
 options = Options()
 options.add_argument("--headless") #modo sin abrir el navegador
 
