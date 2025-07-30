@@ -141,7 +141,7 @@ try:
     print(f"Botón fichar encontrado con el texto: {boton_fichar.text}")
     
     # Realizar clic en el botón (descomenta si lo necesitas)
-    # boton_fichar.click()
+    boton_fichar.click()
     
     print("✔ Fichaje realizado con éxito")
 except Exception as e:
