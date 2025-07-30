@@ -84,6 +84,7 @@ if not USERNAME or not PASSWORD:
 driver_path = "msedgedriver.exe"
 
 service = Service(executable_path=driver_path)
+#service = Service(EdgeChromiumDriverManager().install())
 options = Options()
 options.add_argument("--headless") #modo sin abrir el navegador
 
@@ -140,7 +141,7 @@ try:
     print(f"Botón fichar encontrado con el texto: {boton_fichar.text}")
     
     # Realizar clic en el botón (descomenta si lo necesitas)
-    boton_fichar.click()
+    # boton_fichar.click()
     
     print("✔ Fichaje realizado con éxito")
 except Exception as e:
