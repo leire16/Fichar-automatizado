@@ -5,7 +5,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
-#from webdriver_manager.microsoft import EdgeChromiumDriverManager
 import sys
 import os
 import time
@@ -84,11 +83,18 @@ if not USERNAME or not PASSWORD:
 # Como está en la misma carpeta, solo pones el nombre del archivo
 driver_path = "msedgedriver.exe"
 
-service = Service(executable_path=driver_path)
 options = webdriver.EdgeOptions()
 service = Service(EdgeChromiumDriverManager().install())
-
+options.add_argument("--headless") #modo sin abrir el navegador
 driver = webdriver.Edge(service=service, options=options)
+
+#service = Service(executable_path=driver_path)
+#service = Service(EdgeChromiumDriverManager().install())
+#options = Options()
+
+
+# Iniciar el navegador
+#driver = webdriver.Edge(service=service, options=options)
 
 # URL de inicio de sesión
 login_url = "https://erp.teknei.es/web#cids=1%2C72%2C77%2C78%2C79&menu_id=327&action=460"
@@ -140,7 +146,7 @@ try:
     print(f"Botón fichar encontrado con el texto: {boton_fichar.text}")
     
     # Realizar clic en el botón (descomenta si lo necesitas)
-    # boton_fichar.click()
+    #boton_fichar.click()
     
     print("✔ Fichaje realizado con éxito")
 except Exception as e:
