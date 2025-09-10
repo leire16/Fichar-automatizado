@@ -4,7 +4,7 @@ from selenium.webdriver.edge.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
+#from webdriver_manager.microsoft import EdgeChromiumDriverManager
 import sys
 import os
 import time
@@ -51,12 +51,10 @@ FESTIVOS = {
     "2025-08-12",
     "2025-08-13",
     "2025-08-14",
-    # "2025-08-15",  # Ya estaba
     "2025-08-18",
     "2025-08-19",
     "2025-08-20",
     "2025-08-21",
-    # "2025-08-22",  # Ya estaba
     "2025-08-25"
 }
 
@@ -83,18 +81,13 @@ if not USERNAME or not PASSWORD:
 # Como está en la misma carpeta, solo pones el nombre del archivo
 driver_path = "msedgedriver.exe"
 
-options = webdriver.EdgeOptions()
-service = Service(EdgeChromiumDriverManager().install())
-options.add_argument("--headless") #modo sin abrir el navegador
-driver = webdriver.Edge(service=service, options=options)
-
-#service = Service(executable_path=driver_path)
+service = Service(executable_path=driver_path)
 #service = Service(EdgeChromiumDriverManager().install())
-#options = Options()
-
+options = Options()
+options.add_argument("--headless") #modo sin abrir el navegador
 
 # Iniciar el navegador
-#driver = webdriver.Edge(service=service, options=options)
+driver = webdriver.Edge(service=service, options=options)
 
 # URL de inicio de sesión
 login_url = "https://erp.teknei.es/web#cids=1%2C72%2C77%2C78%2C79&menu_id=327&action=460"
