@@ -4,6 +4,7 @@ from selenium.webdriver.edge.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
 #from webdriver_manager.microsoft import EdgeChromiumDriverManager
 import sys
 import os
@@ -84,11 +85,9 @@ if not USERNAME or not PASSWORD:
 driver_path = "msedgedriver.exe"
 
 service = Service(executable_path=driver_path)
-#service = Service(EdgeChromiumDriverManager().install())
-options = Options()
-options.add_argument("--headless") #modo sin abrir el navegador
+options = webdriver.EdgeOptions()
+service = Service(EdgeChromiumDriverManager().install())
 
-# Iniciar el navegador
 driver = webdriver.Edge(service=service, options=options)
 
 # URL de inicio de sesión
