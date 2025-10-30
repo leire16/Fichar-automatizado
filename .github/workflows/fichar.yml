@@ -4,7 +4,7 @@ on:
   schedule:
     # 🕒 Horario de invierno (CET = UTC+1)
     - cron: '30 6 * * 1-4'  # Lunes a jueves a las 07:30 CET (06:30 UTC)
-    - cron: '50 6 * * 5'    # Viernes a las 07:50 CET (06:50 UTC)
+    - cron: '30 6 * * 5'    # Viernes a las 07:50 CET (06:50 UTC)
 
     # 🕑 Horario de verano (CEST = UTC+2) — descomentar en marzo
     # - cron: '30 5 * * 1-4'  # Lunes a jueves a las 07:30 CEST (05:30 UTC)
