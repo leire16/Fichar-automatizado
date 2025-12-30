@@ -35,8 +35,8 @@ FESTIVOS = {
     "2025-12-24",  # Pre Navidad
     "2025-12-25",  # Navidad
     "2025-12-31",  # Fin Año
-    "2025-01-01",  # Año Nuevo
-    "2025-01-06"   # Reyes 
+    "2026-01-01",  # Año Nuevo
+    "2026-01-06"   # Reyes 
 
     # Vacaciones julio (solo lunes a viernes)
     "2025-07-18",
@@ -65,8 +65,8 @@ FESTIVOS = {
     "2025-12-26", 
     "2025-12-29", 
     "2025-12-30",  
-    "2025-01-02", 
-    "2025-01-05" 
+    "2026-01-02", 
+    "2026-01-05" 
 }
 
 # Obtener la fecha actual
