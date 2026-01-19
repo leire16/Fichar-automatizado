@@ -17,56 +17,40 @@ import sys
 FESTIVOS = {
     "2025-01-01",  # Año Nuevo
     "2025-01-06",  # Reyes Magos
-    "2025-04-17",  # Jueves Santo
-    "2025-04-18",  # Viernes Santo
-    "2025-04-21",  # Festivo País Vasco
+    "2026-03-19",  
+    "2026-04-02",  # Jueves Santo
+    "2026-04-03",  # Viernes Santo
+    "2026-04-06",  # Festivo País Vasco
     "2025-05-01",  # Día del Trabajador
-    "2025-05-30",  # Musical Askartza Martxa
-    "2025-06-12",  # Viaje Port Aventura
-    "2025-06-13",  # Viaje Port Aventura
-    "2025-07-25",  # Santiago Apóstol
-    "2025-07-31",  # San Ignacio de Loyola
-    "2025-08-15",  # Asunción de la Virgen
-    "2025-08-22",  # Día Grande de Bilbao
-    "2025-10-12",  # Día de la Hispanidad
-    "2025-11-01",  # Todos los Santos
-    "2025-12-06",  # Día de la Constitución
-    "2025-12-08",  # Inmaculada Concepción
-    "2025-12-24",  # Pre Navidad
-    "2025-12-25",  # Navidad
-    "2025-12-31",  # Fin Año
-    "2026-01-01",  # Año Nuevo
-    "2026-01-06"   # Reyes 
+    # "2025-05-30",  # Musical Askartza Martxa
+    "2026-07-25",  # Santiago Apóstol
+    "2026-07-31",  # San Ignacio de Loyola
+    "2026-08-15",  # Asunción de la Virgen
+    "2026-08-22",  # Día Grande de Bilbao
+    "2026-10-12",  # Día de la Hispanidad
+    "2026-11-01",  # Todos los Santos
+    "2026-12-06",  # Día de la Constitución
+    "2026-12-08",  # Inmaculada Concepción
+    "2026-12-24",  # Pre Navidad
+    "2026-12-25",  # Navidad
+    "2026-12-31",  # Fin Año
+    "2027-01-01",  # Año Nuevo
+    "2027-01-06"   # Reyes 
 
-    # Vacaciones julio (solo lunes a viernes)
-    "2025-07-18",
-    "2025-07-21",
-    "2025-07-22",
-    "2025-07-23",
+    # Vacaciones Enero
+    "2026-01-26",
+    "2026-01-27",
+    "2026-01-28",
+    "2026-01-29",
+    "2026-01-30",
 
-    # Vacaciones agosto (solo lunes a viernes)
-    "2025-08-01",
-    "2025-08-04",
-    "2025-08-05",
-    "2025-08-06",
-    "2025-08-07",
-    "2025-08-08",
-    "2025-08-11",
-    "2025-08-12",
-    "2025-08-13",
-    "2025-08-14",
-    "2025-08-18",
-    "2025-08-19",
-    "2025-08-20",
-    "2025-08-21",
-    "2025-08-25"
+    # Vacaciones julio 
+
+    # Vacaciones agosto 
+
 
     #Vacaciones Diciembre
-    "2025-12-26", 
-    "2025-12-29", 
-    "2025-12-30",  
-    "2026-01-02", 
-    "2026-01-05" 
+
 }
 
 # Obtener la fecha actual
