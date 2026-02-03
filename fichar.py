@@ -1,9 +1,15 @@
-from selenium import webdriver
-from selenium.webdriver.edge.service import Service
-from selenium.webdriver.edge.options import Options
+#from selenium import webdriver
+#from selenium.webdriver.edge.service import Service
+#from selenium.webdriver.edge.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+
 #from webdriver_manager.microsoft import EdgeChromiumDriverManager
 import sys
 import os
@@ -35,7 +41,7 @@ FESTIVOS = {
     "2026-12-25",  # Navidad
     "2026-12-31",  # Fin Año
     "2027-01-01",  # Año Nuevo
-    "2027-01-06"   # Reyes 
+    "2027-01-06",   # Reyes 
 
     # Vacaciones Enero
     "2026-01-26",
@@ -74,15 +80,22 @@ if not USERNAME or not PASSWORD:
 
 # Configurar WebDriver para Edge
 # Como está en la misma carpeta, solo pones el nombre del archivo
-driver_path = "msedgedriver.exe"
+#driver_path = "msedgedriver.exe"
 
-service = Service(executable_path=driver_path)
+#service = Service(executable_path=driver_path)
 #service = Service(EdgeChromiumDriverManager().install())
-options = Options()
-options.add_argument("--headless") #modo sin abrir el navegador
+#options = Options()
+#options.add_argument("--headless") #modo sin abrir el navegador
 
 # Iniciar el navegador
-driver = webdriver.Edge(service=service, options=options)
+#driver = webdriver.Edge(service=service, options=options)
+
+options = Options()
+options.add_argument("--headless")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 # URL de inicio de sesión
 login_url = "https://erp.teknei.es/web#cids=1%2C72%2C77%2C78%2C79&menu_id=327&action=460"
