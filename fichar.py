@@ -19,6 +19,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 from datetime import datetime
 import sys
 
+
 # Lista de festivos en España (País Vasco) en formato YYYY-MM-DD (2025) mas vacaciones
 FESTIVOS = {
     "2025-01-01",  # Año Nuevo
@@ -145,6 +146,13 @@ try:
 
     # Imprimir el texto del botón encontrado, si es que hay algún texto
     print(f"Botón fichar encontrado con el texto: {boton_fichar.text}")
+
+    # Esperar hasta las 07:45 hora española
+    while True:
+        now = datetime.now().strftime("%H:%M")
+        if now >= "06:45":
+            break
+        time.sleep(10)
     
     # Realizar clic en el botón (descomenta si lo necesitas)
     boton_fichar.click()

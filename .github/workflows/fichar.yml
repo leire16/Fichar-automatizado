@@ -3,8 +3,8 @@ name: Ejecutar Fichaje
 on:
   schedule:
     # 🕒 Horario de invierno (CET = UTC+1)
-    - cron: '30 6 * * 1-4'  # Lunes a jueves(07:30 CET)
-    - cron: '30 6 * * 5'    # Viernes (07:30 CET)
+    - cron: '0 5 * * 1-4'  # Lunes a jueves(06:00 CET)
+    - cron: '0 5 * * 5'    # Viernes (06:00 CET)
 
     # 🕑 Horario de verano (CEST = UTC+2) — descomentar en marzo
     # - cron: '30 5 * * 1-4'  # Lunes a jueves a las 07:30 CEST (05:30 UTC)
